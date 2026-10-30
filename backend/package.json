@@ -1,0 +1,13 @@
+{
+  "name": "backend",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/check-env.js node --watch server.js"
+  },
+  "dependencies": {
+    "@surf-ai/sdk": "1.0.5",
+    "express": "4.22.1",
+    "openai": "^7.45.1",
+    "viem": "^2.57.12"
+  }
+}

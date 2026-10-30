@@ -1,0 +1,15 @@
+# dependencies & builds
+node_modules/
+dist/
+*.tsbuildinfo
+# secrets — never commit
+.env
+.env.*
+!.env.example
+# sandbox / tooling
+.vulcan/
+.claude/
+uploads/
+*.log
+.DS_Store
+.vulcan-error-reporter.js
