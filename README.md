@@ -1,17 +1,17 @@
 <div align="center">
 
-<img src="docs/hero.png" alt="Makoto — Xác minh trước khi đầu tư" width="100%" />
+<img src="docs/hero.png" alt="Makoto — Verify before you invest" width="100%" />
 
 <br />
 
 # Makoto
 
-**Nền tảng AI xác minh thông tin crypto cho người Việt.**
-Dán một tín hiệu, tin đồn hay địa chỉ token. Makoto đối chiếu với dữ liệu on-chain và thị trường thật, rồi trả về **điểm tin cậy 0–100** kèm lý do rõ ràng.
+**AI-powered verification for crypto signals.**
+Paste a trading signal, rumour or token address. Makoto cross-checks it against live on-chain and market data and returns a **0–100 trust score** with clear reasoning.
 
 [![Live](https://img.shields.io/badge/Live-makotoai.xyz-2DD4BF?style=for-the-badge)](https://makotoai.xyz)
 [![Arc Testnet](https://img.shields.io/badge/Arc-Testnet-3B82F6?style=for-the-badge)](https://explorer.testnet.arc.io)
-[![USDC](https://img.shields.io/badge/Thanh%20toán-USDC-7C3AED?style=for-the-badge)](https://faucet.circle.com)
+[![USDC](https://img.shields.io/badge/Payments-USDC-7C3AED?style=for-the-badge)](https://faucet.circle.com)
 
 [![React](https://img.shields.io/badge/React-19-149ECA?logo=react&logoColor=white)](https://react.dev)
 [![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)](https://vitejs.dev)
@@ -20,132 +20,137 @@ Dán một tín hiệu, tin đồn hay địa chỉ token. Makoto đối chiếu
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)](https://www.postgresql.org)
 [![OpenAI](https://img.shields.io/badge/OpenAI-412991?logo=openai&logoColor=white)](https://openai.com)
 
-[Dùng thử](https://makotoai.xyz) · [Tính năng](#-tính-năng) · [Cách hoạt động](#-cách-makoto-xác-minh) · [Chạy local](#-chạy-local) · [English](#-english)
+[Try it](https://makotoai.xyz) · [Features](#-features) · [How it works](#-how-verification-works) · [Run locally](#-run-locally) · [Security](#-security)
 
 </div>
 
 ---
 
-## ✨ Giới thiệu
+## ✨ Overview
 
-Thị trường crypto đầy "kèo": *"sắp list Binance"*, *"cá voi đang gom"*, *"x10 trong tuần"*. Phần lớn không kiểm chứng được, và người mới thường là người chịu thiệt.
+Crypto is full of "alpha calls": *"listing on Binance soon"*, *"whales are accumulating"*, *"10x this week"*. Most of them can't be verified, and newcomers are usually the ones who pay for it.
 
-**Makoto** giúp bạn kiểm tra trước khi xuống tiền. Thay vì đọc cảm tính, Makoto tách tín hiệu thành từng nhận định, đối chiếu với dữ liệu thực (giá, hợp đồng token, ví lớn, lịch mở khóa, sàn niêm yết, tin tức), cho hai phe ủng hộ và phản biện tranh luận, rồi mới chấm điểm.
+**Makoto** lets you check before you buy. Instead of going on gut feeling, Makoto:
 
-- 🔐 Đăng nhập bằng **Google**, tặng **20 credit** miễn phí, **không cần ví**.
-- 💳 Nạp thêm credit bằng **USDC trên Arc Testnet**: thanh toán thẳng từ ví của bạn, không qua trung gian.
-- 🇻🇳 Hỗ trợ đầy đủ **tiếng Việt** và **tiếng Anh**, giao diện sáng / tối, dùng tốt trên điện thoại.
+1. breaks a signal into individual claims;
+2. checks each claim against real data: price, token contract, whale wallets, unlock schedule, exchange listings and news;
+3. has a bull side and a bear side argue it out;
+4. only then gives its score.
 
-## 🧩 Tính năng
+- 🔐 **Sign in with Google**: 20 free credits, no wallet required.
+- 💳 **Top up with USDC on Arc Testnet**, paid directly from your own wallet with no middleman.
+- 🌐 **Full English and Vietnamese support**, light and dark themes, mobile-friendly.
 
-| | Tính năng | Mô tả |
+## 🧩 Features
+
+| | Feature | Description |
 |---|---|---|
-| 🛡️ | **Xác minh tín hiệu** | Chấm điểm tin cậy 0–100. Kiểm từng nhận định (đúng / sai / gây hiểu lầm), nhận diện chiêu dụ dỗ (hứa lãi, hối thúc, đòi chuyển tiền). |
-| 🔬 | **Phân tích hợp đồng** | Honeypot, thuế mua/bán, quyền chủ hợp đồng, độ tập trung của ví lớn, thanh khoản DEX, lịch mở khóa token. |
-| 💬 | **Trợ lý AI có công cụ** | Hỏi giá, bảng xếp hạng, tin tức, chỉ số Sợ hãi & Tham lam, tra cứu web, ví và giao dịch trên Arc. Mỗi câu trả lời đều dựa trên dữ liệu được truy xuất theo thời gian thực. |
-| 📁 | **Hồ sơ dự án** | Giới thiệu, đội ngũ (kèm tài khoản X đã được đối chiếu), lịch sử gọi vốn, quỹ đầu tư, token, hợp đồng và liên kết chính thức (website, X, Telegram, Discord, GitHub…). |
-| 📰 | **Bản tin & danh sách theo dõi** | Bản tin thị trường mỗi ngày và theo dõi tối đa 12 token với giá, biến động 24h, xu hướng 7 ngày. Miễn phí. |
-| ⛓️ | **Ví trên Arc** | Xem số dư, token và giao dịch của bất kỳ địa chỉ nào trên Arc Testnet. |
-| 🧠 | **Trí nhớ cá nhân** | Makoto nhớ sở thích của bạn để trả lời sát hơn. Bạn xem, sửa, xóa hoặc tắt bất cứ lúc nào. |
+| 🛡️ | **Signal verification** | 0–100 trust score. Each claim is rated true, false or misleading. Flags manipulation tactics: guaranteed returns, urgency pressure, requests to send funds. |
+| 🔬 | **Contract analysis** | Honeypot detection, buy/sell tax, owner privileges, holder concentration, DEX liquidity and token unlock schedule. |
+| 💬 | **Tool-using AI assistant** | Prices, market rankings, news, the Fear & Greed index, web research, and Arc wallets and transactions. Every answer is grounded in data fetched in real time. |
+| 📁 | **Project profiles** | Overview, team (with cross-checked X accounts), funding history, investors, token, contracts and official links (website, X, Telegram, Discord, GitHub…). |
+| 📰 | **Daily briefing & watchlist** | A daily market briefing, plus a watchlist of up to 12 tokens with price, 24h change and 7-day trend. Free. |
+| ⛓️ | **Arc wallet explorer** | Balances, tokens and transactions for any address on Arc Testnet. |
+| 🧠 | **Personal memory** | Makoto remembers your preferences to give more relevant answers. View, edit, delete or turn it off at any time. |
 
-## 📸 Ảnh chụp màn hình
+## 📸 Screenshots
 
 <table>
   <tr>
-    <td width="50%"><img src="docs/verify.png" alt="Kết quả xác minh" /><p align="center"><b>Xác minh</b>: điểm tin cậy và phân tích chi tiết</p></td>
-    <td width="50%"><img src="docs/app-home.png" alt="Trang chính" /><p align="center"><b>Trang chính</b>: danh sách theo dõi và bản tin</p></td>
+    <td width="50%"><img src="docs/verify.png" alt="Verification report" /><p align="center"><b>Verify</b>: trust score and detailed analysis</p></td>
+    <td width="50%"><img src="docs/app-home.png" alt="Home" /><p align="center"><b>Home</b>: watchlist and daily briefing</p></td>
   </tr>
   <tr>
-    <td width="50%"><img src="docs/projects.png" alt="Hồ sơ dự án" /><p align="center"><b>Dự án</b>: các dự án vừa gọi vốn</p></td>
-    <td width="50%"><img src="docs/landing.png" alt="Trang giới thiệu" /><p align="center"><b>Trang giới thiệu</b></p></td>
+    <td width="50%"><img src="docs/projects.png" alt="Project profiles" /><p align="center"><b>Projects</b>: recently funded projects</p></td>
+    <td width="50%"><img src="docs/landing.png" alt="Landing page" /><p align="center"><b>Landing page</b></p></td>
   </tr>
 </table>
 
-## 🔍 Cách Makoto xác minh
+## 🔍 How verification works
 
 ```mermaid
 flowchart LR
-    A["📝 Tín hiệu<br/>tin đồn / token / địa chỉ"] --> B["1. Tách nhận định<br/>token, hợp đồng, lời hứa"]
-    B --> C["2. Thu thập dữ liệu thật"]
-    C --> C1["Giá & thanh khoản DEX"]
-    C --> C2["Bảo mật hợp đồng<br/>(GoPlus)"]
-    C --> C3["Ví lớn & mở khóa token"]
-    C --> C4["Sàn niêm yết, KOL, tin tức"]
-    C1 & C2 & C3 & C4 --> D["3. Tranh luận<br/>ủng hộ ⚔️ phản biện"]
-    D --> E["4. Chấm điểm<br/>0–100 + lý do"]
+    A["📝 Signal<br/>rumour / token / address"] --> B["1. Extract claims<br/>token, contract, promises"]
+    B --> C["2. Gather live data"]
+    C --> C1["Price & DEX liquidity"]
+    C --> C2["Contract security<br/>(GoPlus)"]
+    C --> C3["Whale wallets & unlocks"]
+    C --> C4["Listings, KOLs, news"]
+    C1 & C2 & C3 & C4 --> D["3. Debate<br/>bull ⚔️ bear"]
+    D --> E["4. Verdict<br/>0–100 + reasoning"]
 ```
 
-1. **Tách nhận định**: AI đọc tín hiệu và rút ra token, địa chỉ hợp đồng, các lời hứa cụ thể.
-2. **Thu thập dữ liệu**: lấy song song từ nhiều nguồn. Nguồn nào lỗi thì bỏ qua, các nguồn còn lại vẫn được dùng.
-3. **Tranh luận**: một phe tìm điểm mạnh, một phe tìm điểm yếu, chỉ dựa trên bằng chứng đã thu thập.
-4. **Chấm điểm**: điểm tin cậy, kết luận cho từng nhận định, dấu hiệu thao túng và lời khuyên.
+1. **Extract claims.** The model reads the signal and pulls out the token, contract address and each specific promise.
+2. **Gather data.** Sources are queried in parallel. If one source fails it is skipped, and the rest are still used.
+3. **Debate.** One side argues for the signal and the other against it, using only the evidence collected.
+4. **Verdict.** A trust score, a ruling on each claim, any manipulation flags, and practical advice.
 
-> Chỉ trừ credit khi có kết quả. Nếu xác minh thất bại, bạn không mất credit nào.
+> You are only charged when a result is delivered. If a verification fails, no credits are used.
 
-## 💳 Credit
+## 💳 Credits
 
-| Hành động | Chi phí |
+| Action | Cost |
 |---|---|
-| Hỏi **Makoto Fast** | 1 credit + 1 credit cho mỗi công cụ được dùng |
-| Hỏi **Makoto Pro** (phân tích sâu hơn) | 5 credit + 2 credit cho mỗi công cụ được dùng |
-| **Xác minh** một tín hiệu | 3 credit |
-| Bản tin, danh sách theo dõi, hồ sơ dự án | Miễn phí |
+| Ask **Makoto Fast** | 1 credit + 1 credit per tool used |
+| Ask **Makoto Pro** (deeper analysis) | 5 credits + 2 credits per tool used |
+| **Verify** a signal | 3 credits |
+| Briefing, watchlist, project profiles | Free |
 
-Tài khoản mới được tặng **20 credit**. Nạp thêm bằng USDC trên Arc Testnet:
+New accounts get **20 free credits**. Top up with USDC on Arc Testnet:
 
-| Gói | USDC | Credit | Thưởng |
+| Pack | USDC | Credits | Bonus |
 |---|---:|---:|---:|
-| Gói nhỏ | 1 | 100 | — |
-| Gói vừa | 5 | 550 | +10% |
-| Gói lớn | 10 | 1.200 | +20% |
-| Gói rất lớn | 25 | 3.250 | +30% |
+| Small | 1 | 100 | — |
+| Medium | 5 | 550 | +10% |
+| Large | 10 | 1,200 | +20% |
+| XL | 25 | 3,250 | +30% |
 
-USDC được chuyển thẳng tới ví kho bạc Makoto [`0x1629…586b`](https://explorer.testnet.arc.io/address/0x16299b74c616994eaecb9b20e37d369d5d62586b). Máy chủ đọc giao dịch trên chuỗi để xác nhận rồi mới cộng credit; mỗi giao dịch chỉ được cộng một lần. Nhận USDC thử nghiệm miễn phí tại [faucet.circle.com](https://faucet.circle.com).
+USDC goes directly to the Makoto treasury wallet [`0x1629…586b`](https://explorer.testnet.arc.io/address/0x16299b74c616994eaecb9b20e37d369d5d62586b). The server reads the transaction on-chain before adding credits, and each transaction can only be credited once. Get free test USDC at [faucet.circle.com](https://faucet.circle.com).
 
-## 🏗️ Kiến trúc
+## 🏗️ Architecture
 
 ```mermaid
 flowchart LR
-    U["Người dùng<br/>(trình duyệt)"] -->|HTTPS| F["Frontend<br/>React 19 · Vite · Tailwind 4"]
+    U["User<br/>(browser)"] -->|HTTPS| F["Frontend<br/>React 19 · Vite · Tailwind 4"]
     F -->|"/api/*"| B["Backend<br/>Express"]
     B --> O["OpenAI<br/>(Makoto Fast / Pro)"]
-    B --> S["Surf Data API<br/>giá, tin tức, dự án, on-chain"]
-    B --> G["GoPlus<br/>bảo mật token"]
-    B --> A["Arc Testnet RPC<br/>xác nhận thanh toán USDC"]
+    B --> S["Surf Data API<br/>prices, news, projects, on-chain"]
+    B --> G["GoPlus<br/>token security"]
+    B --> A["Arc Testnet RPC<br/>USDC payment checks"]
     B --> D[("PostgreSQL")]
 ```
 
-| Lớp | Công nghệ |
+| Layer | Technology |
 |---|---|
 | Frontend | React 19, Vite, Tailwind CSS 4, TanStack Query, Motion, ECharts, lucide-react |
 | Backend | Node.js, Express, Surf SDK, viem |
-| Cơ sở dữ liệu | PostgreSQL (schema Drizzle) |
-| AI | OpenAI, gọi từ máy chủ, trả lời dạng stream |
-| Dữ liệu | Surf Data API, GoPlus Security, CoinGecko, Arc Testnet RPC |
-| Đăng nhập | Google Sign-In; ví (MetaMask, Rabby, WalletConnect) chỉ để nạp USDC |
+| Database | PostgreSQL (Drizzle schema) |
+| AI | OpenAI, called server-side with streamed responses |
+| Data | Surf Data API, GoPlus Security, CoinGecko, Arc Testnet RPC |
+| Auth | Google Sign-In. A wallet (MetaMask, Rabby, WalletConnect) is only needed for USDC top-ups. |
 
-### Cấu trúc thư mục
+### Project structure
 
 ```
 .
-├── frontend/                 # Ứng dụng web (Vite + React)
+├── frontend/                 # Web app (Vite + React)
 │   └── src/
 │       ├── components/makoto/
-│       │   ├── landing/      # Trang giới thiệu
-│       │   ├── chat/         # Trợ lý AI, trang chính, bản tin
-│       │   ├── verify/       # Xác minh tín hiệu & báo cáo
-│       │   └── project/      # Hồ sơ dự án
-│       └── lib/              # Phiên đăng nhập, i18n, ví, định dạng
+│       │   ├── landing/      # Landing page
+│       │   ├── chat/         # AI assistant, home, briefing
+│       │   ├── verify/       # Signal verification & reports
+│       │   └── project/      # Project profiles
+│       └── lib/              # Session, i18n, wallet, formatting
 ├── backend/                  # API (Express)
-│   ├── routes/               # Tự động gắn vào /api/<tên file>
-│   ├── lib/                  # Agent, công cụ, xác minh, thanh toán, Arc
-│   └── db/schema.js          # Bảng dữ liệu
-└── docs/                     # Ảnh dùng trong README
+│   ├── routes/               # Auto-mounted at /api/<file name>
+│   ├── lib/                  # Agent, tools, verification, payments, Arc
+│   └── db/schema.js          # Database tables
+└── docs/                     # README images
 ```
 
-## 🚀 Chạy local
+## 🚀 Run locally
 
-**Yêu cầu:** Node.js 20+ hoặc [Bun](https://bun.sh), PostgreSQL, và các khóa API bên dưới.
+**Requirements:** Node.js 20+ or [Bun](https://bun.sh), PostgreSQL, and the API keys below.
 
 ```bash
 git clone https://github.com/congthuat/Makoto-Ai-Arc-Testnet-.git
@@ -153,42 +158,34 @@ cd Makoto-Ai-Arc-Testnet-
 
 # Backend
 cd backend
-cp .env.example .env        # điền các biến môi trường
+cp .env.example .env        # fill in the environment variables
 bun install
 bun run dev                 # http://localhost:3001
 
-# Frontend (cửa sổ terminal khác)
+# Frontend (in a second terminal)
 cd ../frontend
 cp .env.example .env
 bun install
 bun run dev                 # http://localhost:5173
 ```
 
-| Biến môi trường | Mô tả |
+| Variable | Description |
 |---|---|
-| `OPENAI_API_KEY` | Khóa OpenAI, **chỉ dùng ở máy chủ** |
-| `SURF_API_KEY` | Khóa Surf Data API (dữ liệu thị trường & cơ sở dữ liệu) |
-| `GOOGLE_CLIENT_ID` | OAuth Client ID loại Web, dạng `….apps.googleusercontent.com` |
-| `TREASURY_ADDRESS` | Ví nhận USDC khi người dùng nạp credit |
-| `BACKEND_PORT` | Cổng backend, mặc định `3001` |
+| `OPENAI_API_KEY` | OpenAI key, **server-side only** |
+| `SURF_API_KEY` | Surf Data API key (market data & database) |
+| `GOOGLE_CLIENT_ID` | OAuth Web client ID, ending in `.apps.googleusercontent.com` |
+| `TREASURY_ADDRESS` | Wallet that receives USDC top-ups |
+| `BACKEND_PORT` | Backend port, default `3001` |
 
-> ⚠️ Không bao giờ commit file `.env`. File này đã nằm trong `.gitignore`.
+> ⚠️ Never commit your `.env` file. It is already listed in `.gitignore`.
 
-## 🔒 Bảo mật
+## 🔒 Security
 
-- Khóa OpenAI và mọi khóa API chỉ nằm ở máy chủ, không bao giờ gửi xuống trình duyệt.
-- Makoto **không bao giờ** yêu cầu private key hay cụm từ khôi phục (seed phrase). Nạp tiền là giao dịch bạn tự ký trong ví của mình.
-- Mỗi giao dịch USDC được kiểm tra trên chuỗi (đúng người gửi, đúng ví nhận, đúng số tiền) và chỉ được cộng credit một lần.
-- Credit được giữ trước rồi trừ đúng phần đã dùng. Công cụ bị lỗi hay xác minh thất bại thì không tính tiền.
-- Lỗi máy chủ không làm lộ thông tin kỹ thuật bên trong. Trợ lý chỉ đọc được các trang web công khai, không truy cập được mạng nội bộ.
-
-## 🌐 English
-
-**Makoto** is an AI platform for verifying crypto information, built for Vietnamese users (full English support included). Paste a trading signal, rumour or token address: Makoto breaks it into individual claims and checks each one against live market and on-chain data (prices, DEX liquidity, GoPlus contract security, whale concentration, token unlocks, exchange listings, KOL wallets, news). It runs a bull-vs-bear debate grounded in that evidence and returns a **0–100 trust score** with clear reasoning.
-
-It also includes a tool-using AI assistant, project profiles (team, funding, investors, official links), a free daily briefing and watchlist, an Arc wallet explorer and personal memory. Sign in with Google and get 20 free credits; top up with **USDC on Arc Testnet**, sent directly from your own wallet.
-
-**Stack:** React 19 · Vite · Tailwind CSS 4 · Express · PostgreSQL · OpenAI · Surf Data API · viem · Arc Testnet.
+- The OpenAI key and all other API keys live on the server only and are never sent to the browser.
+- Makoto **never** asks for a private key or seed phrase. Top-ups are transactions you sign in your own wallet.
+- Every USDC payment is checked on-chain (correct sender, correct recipient, correct amount) and credited only once.
+- Credits are held up front and only what was actually used is charged. Failed tools and failed verifications are free.
+- Server errors never expose internal details. The assistant can only read public web pages and cannot reach internal networks.
 
 ---
 
@@ -196,6 +193,6 @@ It also includes a tool-using AI assistant, project profiles (team, funding, inv
 
 **[makotoai.xyz](https://makotoai.xyz)**
 
-<sub>⚠️ Makoto cung cấp thông tin tham khảo, <b>không phải lời khuyên đầu tư</b>. Hãy luôn tự nghiên cứu (DYOR) trước khi quyết định.</sub>
+<sub>⚠️ Makoto provides information for reference only and is <b>not financial advice</b>. Always do your own research (DYOR).</sub>
 
 </div>
